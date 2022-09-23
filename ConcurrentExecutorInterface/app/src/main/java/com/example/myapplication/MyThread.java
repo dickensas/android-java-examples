@@ -24,16 +24,16 @@ class MyThread extends Thread {
         while(running) {
             try {
                 Thread.sleep(500);
+                context.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        cb.callBack(count);
+                    }
+                });
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             count++;
         }
-        context.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                cb.callBack(count);
-            }
-        });
     }
 }
