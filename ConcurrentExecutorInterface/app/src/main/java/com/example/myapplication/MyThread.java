@@ -4,7 +4,7 @@ import android.content.Context;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-class MyThread extends Thread implements Runnable {
+class MyThread extends Thread {
     private boolean running=false;
     MyCallback cb;
     int count;
